@@ -1,0 +1,28 @@
+{
+  "name": "react-style-extractor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youpen/ReactStyleExtractor.git"
+  },
+  "author": "youpen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youpen/ReactStyleExtractor/issues"
+  },
+  "homepage": "https://github.com/youpen/ReactStyleExtractor#readme",
+  "dependencies": {
+    "babel-generator": "^6.26.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-traverse": "^6.26.0",
+    "babel-types": "^6.26.0",
+    "babylon": "^6.18.0",
+    "lodash": "^4.17.11",
+    "uuid": "^3.3.2"
+  }
+}
