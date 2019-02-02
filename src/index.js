@@ -4,8 +4,9 @@ import * as _ from 'lodash';
 import * as t from "babel-types";
 import generate from "babel-generator";
 import * as uuid from 'uuid';
+
 const fs = require('fs');
-import { demoCodeString } from './demoCode';
+import {demoCodeString} from './demoCode';
 
 const ast = babylon.parse(demoCodeString, {
   sourceType: 'module',
@@ -18,27 +19,30 @@ traverse(ast, {
       return;
     }
     if (path.node.value.expression.type === 'ObjectExpression') {
+      // TODO check binding
+      // if (path.scope.hasBinding("n")) {
+      //   //...
+      // }
+      console.log(path.scope)
       const test = `a${randomString()}`;
       styleObjects.push(t.objectProperty(t.identifier(test), path.node.value.expression));
       path.node.value.expression = (
-        t.expressionStatement(
-          t.memberExpression(
-            t.identifier('styles'),
-            t.identifier(test)
-          ),
+        t.memberExpression(
+          t.identifier('styles'),
+          t.identifier(test)
         )
       );
     }
   }
 });
 
-function randomString(){
-  var expect=8;//期望的字符串长度
-  var str=Math.random().toString(36).substring(2);
-  while(str.length<expect){
-    str=Math.random().toString(36).substring(2)
+function randomString() {
+  var expect = 8;//期望的字符串长度
+  var str = Math.random().toString(36).substring(2);
+  while (str.length < expect) {
+    str = Math.random().toString(36).substring(2)
   }
-  return str.substring(0,expect);
+  return str.substring(0, expect);
 }
 
 

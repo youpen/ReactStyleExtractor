@@ -24,16 +24,16 @@ class StoreItem extends Component {
     if (!storeInfo) {
       return <View />;
     }
-    return <View style={styles.a982bex8d;}>
-  <View style={styles.atocr8au4;}>
-  <View style={styles.alqovo3ss;}>
-  <Image source={storeInfo.logo} style={styles.a3pqner9y;} />
-    <View style={styles.axuq5g9nu;}>
-  <Text style={styles.a8voxyjg6;}>{storeInfo.en}</Text>
-    <Text style={styles.agkcl0k0u;}>{storeInfo.zh}</Text>
+    return <View style={styles.ashkemgr6}>
+  <View style={styles.anljznfw3}>
+  <View style={styles.a7mnw3sak}>
+  <Image source={storeInfo.logo} style={styles.agqzn0ena} />
+    <View style={styles.apfdabvy1}>
+  <Text style={styles.afagrf2ap}>{storeInfo.en}</Text>
+    <Text style={styles.akdierlxh}>{storeInfo.zh}</Text>
     </View>
     </View>
-    <View style={styles.ajzasrt17;}>
+    <View style={styles.a5fgc3lix}>
     {<OrderList item={item} />}
     </View>
     </View>
@@ -42,12 +42,12 @@ class StoreItem extends Component {
   }
 
   renderDivider() {
-    return <View style={styles.ash2lzxq9;} />;
+    return <View style={styles.az6ve3hh0} />;
   }
 
   renderOrderItem(item) {
-    return <View style={styles.a65xph0hk;}>
-  <Text style={styles.a6887xt55;}>{item}
+    return <View style={styles.am2mvz3vz}>
+  <Text style={styles.agqj8kymd}>{item}
   </Text>
     </View>;
   }
@@ -55,20 +55,20 @@ class StoreItem extends Component {
 
 export default StoreItem;
 const styles = StyleSheet.create({
-  a982bex8d: {},
-  atocr8au4: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: itemHeight },
-  alqovo3ss: {
+  ashkemgr6: {},
+  anljznfw3: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: itemHeight },
+  a7mnw3sak: {
     width: logoWidth,
     backgroundColor: '#373D42',
     alignItems: 'center',
     justifyContent: 'center'
   },
-  a3pqner9y: { width: 60, height: 60 },
-  axuq5g9nu: { alignItems: 'center', justifyContent: 'center' },
-  a8voxyjg6: { color: 'white' },
-  agkcl0k0u: { color: 'white' },
-  ajzasrt17: { flex: 1, alignItems: 'center' },
-  ash2lzxq9: { height: 1, backgroundColor: '#7C7F86', marginLeft: 15 },
-  a65xph0hk: { height: 139, width: itemWidth, alignItems: 'center', justifyContent: 'center' },
-  a6887xt55: { color: '#FFE39B', fontSize: 35, fontWeight: '900' }
+  agqzn0ena: { width: 60, height: 60 },
+  apfdabvy1: { alignItems: 'center', justifyContent: 'center' },
+  afagrf2ap: { color: 'white' },
+  akdierlxh: { color: 'white' },
+  a5fgc3lix: { flex: 1, alignItems: 'center' },
+  az6ve3hh0: { height: 1, backgroundColor: '#7C7F86', marginLeft: 15 },
+  am2mvz3vz: { height: 139, width: itemWidth, alignItems: 'center', justifyContent: 'center' },
+  agqj8kymd: { color: '#FFE39B', fontSize: 35, fontWeight: '900' }
 });
