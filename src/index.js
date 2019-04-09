@@ -23,7 +23,7 @@ traverse(ast, {
       // if (path.scope.hasBinding("n")) {
       //   //...
       // }
-      console.log(path.scope)
+      // console.log(path.scope)
       const test = `a${randomString()}`;
       styleObjects.push(t.objectProperty(t.identifier(test), path.node.value.expression));
       path.node.value.expression = (
@@ -75,7 +75,7 @@ ast.program.body.push(styleSheetStatement);
 
 
 const a = generate(ast, {}, demoCodeString);
-console.log(a);
+// console.log(a);
 
 fs.writeFileSync('./temp.js', a.code)
 

@@ -1,4 +1,4 @@
-export const demoCodeString = `import React, { Component } from 'react';
+export const demoCodeString = `import React, {Component} from 'react';
 import {
   View,
   Text,
@@ -6,7 +6,7 @@ import {
   Easing,
   Image,
 } from 'react-native';
-import { cfg } from '../../config'
+import {cfg} from '../../config'
 import OrderList from './OrderList';
 
 const itemWidth = 187;
@@ -17,64 +17,42 @@ class StoreItem extends Component {
   constructor(props) {
     super(props);
     this.renderOrderItem = this.renderOrderItem.bind(this);
-    this.positionX = new Animated.Value(0);
   }
-
-  componentDidUpdate() {
-    this.animateKey = 0;
-  }
-
 
   render() {
-    const { item } = this.props;
+    const {item} = this.props;
     const storeInfo = cfg().stores.storeInfoMap[item.store_id];
     if (!storeInfo) {
       return <View/>
     }
     return (
-      <View style={{  }}>
-  <View
-    style={{ flexDirection: 'row', justifyContent: 'center', alignItems:'center', height: itemHeight }}
-  >
-  <View style={{
-      width: logoWidth,
-        backgroundColor: '#373D42',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }}>
-  <Image source={storeInfo.logo}
-    style={{ width: 60, height: 60 }}/>
-    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-  <Text style={{ color: 'white' }}>{storeInfo.en}</Text>
-    <Text style={{ color: 'white' }}>{storeInfo.zh}</Text>
-    </View>
-    </View>
-    <View style={{flex:1, alignItems:'center'}}>
-    { <OrderList item={item}/> }
-    </View>
-    </View>
-      {this.renderDivider()}
-    </View>
+      <View style={{}}>
+        <View
+          style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: itemHeight}}
+        >
+          <View style={{
+            width: logoWidth,
+            backgroundColor: '#373D42',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <Image source={storeInfo.logo}
+                   style={{width: 60, height: 60}}/>
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{color: 'white'}}>{storeInfo.en}</Text>
+              <Text style={{color: 'white'}}>{storeInfo.zh}</Text>
+            </View>
+          </View>
+          <View style={{flex: 1, alignItems: 'center'}}>
+            { <OrderList item={item}/> }
+          </View>
+        </View>
+        {this.renderDivider()}
+      </View>
     );
-  }
-
-  renderDivider() {
-    return (
-      <View style={{height: 1,  backgroundColor: '#7C7F86', marginLeft: 15}} />
-  )
-  }
-
-  renderOrderItem(item) {
-    return (
-      <View
-    style={{ height: 139, width: itemWidth, alignItems: 'center', justifyContent: 'center' }}
-  >
-  <Text style={{ color: '#FFE39B', fontSize: 35, fontWeight: '900' }}>{item}
-  </Text>
-    </View>
-  );
   }
 }
 
 export default StoreItem;
+
 `;
